@@ -232,7 +232,7 @@ python test_recommender.py
    *(Alternative Local Path: `screenshots/input_screen.png`)*
 
 2. **NLP ENGINE SCREENSHOOT**:
-   ![NLP ENGINE](<img width="498" height="916" alt="Screenshot 2026-06-20 190251" src="https://github.com/user-attachments/assets/544b9975-5d27-4862-ac84-49d2d720621b" />
+   ![NLP ENGINE]<img width="498" height="916" alt="Screenshot 2026-06-20 190251" src="https://github.com/user-attachments/assets/544b9975-5d27-4862-ac84-49d2d720621b" />
 )
   <img width="456" height="386" alt="Screenshot 2026-06-20 190305" src="https://github.com/user-attachments/assets/c853d359-9d73-4c46-810c-d6dc414cf35c" />
 
