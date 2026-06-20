@@ -1,6 +1,9 @@
-# Occasion-Based Product Recommendation System
+Occasion-Based Product Recommendation System
+Overview
 
-An intelligent, premium-grade, and production-ready **Occasion-Based Product Recommendation System** built for the AI/ML Engineer role. The system features a **FastAPI backend** in Python that implements a high-performance **Hybrid Semantic & TF-IDF Recommendation Engine** and a stunning, responsive, glassmorphic Single-Page Application (SPA) frontend.
+This project is an AI-powered Occasion-Based Product Recommendation System that recommends relevant products based on user-entered occasions such as Birthday, Wedding, Anniversary, Diwali, Valentine's Day, Office Party, Housewarming, and more.
+
+The system analyzes product information from the provided product catalog and ranks products according to their relevance to the selected occasion.
 
 ---
 
@@ -224,7 +227,8 @@ python test_recommender.py
 *Please place your application screenshots in these folders or references for submission evaluation:*
 
 1. **Occasion Input Screen**:
-   ![Occasion Input Screen](https://raw.githubusercontent.com/username/repo/main/screenshots/input_screen.png)
+   ![Occasion Input Screen]<img width="1000" height="2000" alt="screencapture-127-0-0-1-8000-2026-06-20-19_02_03 (1)" src="https://github.com/user-attachments/assets/320275dd-78c9-42fa-bb84-b4485573f1a3" />
+)
    *(Alternative Local Path: `screenshots/input_screen.png`)*
 
 2. **Product Recommendations Grid Results**:
@@ -241,4 +245,3 @@ python test_recommender.py
 - **AI Coding Assistant**: Developed with the assistance of **Antigravity (built by Google DeepMind)**.
 
 ---
-*Good luck with the review! Built with care for the AI/ML Engineer assessment.*
