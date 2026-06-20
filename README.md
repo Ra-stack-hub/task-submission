@@ -221,18 +221,25 @@ python test_recommender.py
 
 ---
 
-## 11. Submission Deliverables & Screenshots
+## 11. Application Screenshots
 
-### Required Screenshots
-*Please place your application screenshots in these folders or references for submission evaluation:*
+### 1. Occasion Input & Recommendation Screen
 
-1. **Occasion Input Screen**:
-   ![Occasion Input Screen]<img width="400" height="1400" alt="screencapture-127-0-0-1-8000-2026-06-20-19_02_03 (1)" src="https://github.com/user-attachments/assets/320275dd-78c9-42fa-bb84-b4485573f1a3" />
-)
-2. **NLP ENGINE SCREENSHOOT**:
-   ![NLP ENGINE]<img width="298" height="716" alt="Screenshot 2026-06-20 190251" src="https://github.com/user-attachments/assets/544b9975-5d27-4862-ac84-49d2d720621b" />
-<img width="356" height="286" alt="Screenshot 2026-06-20 190305" src="https://github.com/user-attachments/assets/c853d359-9d73-4c46-810c-d6dc414cf35c" />
+<img width="400" alt="Occasion Recommendation Screen" src="https://github.com/user-attachments/assets/320275dd-78c9-42fa-bb84-b4485573f1a3" />
 
+**Description:**
+This screen allows users to enter an occasion such as Birthday, Wedding, Diwali, Valentine's Day, or Office Party. The system processes the query and displays ranked product recommendations along with product details and images.
+
+---
+
+### 2. NLP Engine Dashboard
+
+<img width="350" alt="NLP Engine Metrics" src="https://github.com/user-attachments/assets/544b9975-5d27-4862-ac84-49d2d720621b" />
+
+<img width="350" alt="Semantic Mapping Dashboard" src="https://github.com/user-attachments/assets/c853d359-9d73-4c46-810c-d6dc414cf35c" />
+
+**Description:**
+The NLP Engine Dashboard displays dataset statistics, pipeline performance, semantic query expansion, and recommendation engine metrics. It provides insights into how the hybrid recommendation system processes user occasions and generates relevant product suggestions.
 
 ---
 
