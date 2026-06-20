@@ -227,13 +227,15 @@ python test_recommender.py
 *Please place your application screenshots in these folders or references for submission evaluation:*
 
 1. **Occasion Input Screen**:
-   ![Occasion Input Screen]<img width="1000" height="2000" alt="screencapture-127-0-0-1-8000-2026-06-20-19_02_03 (1)" src="https://github.com/user-attachments/assets/320275dd-78c9-42fa-bb84-b4485573f1a3" />
+   ![Occasion Input Screen]<img width="800" height="1600" alt="screencapture-127-0-0-1-8000-2026-06-20-19_02_03 (1)" src="https://github.com/user-attachments/assets/320275dd-78c9-42fa-bb84-b4485573f1a3" />
 )
    *(Alternative Local Path: `screenshots/input_screen.png`)*
 
-2. **Product Recommendations Grid Results**:
-   ![Product Recommendations Results](https://raw.githubusercontent.com/username/repo/main/screenshots/results_screen.png)
-   *(Alternative Local Path: `screenshots/results_screen.png`)*
+2. **NLP ENGINE SCREENSHOOT**:
+   ![NLP ENGINE](<img width="498" height="916" alt="Screenshot 2026-06-20 190251" src="https://github.com/user-attachments/assets/544b9975-5d27-4862-ac84-49d2d720621b" />
+)
+  <img width="456" height="386" alt="Screenshot 2026-06-20 190305" src="https://github.com/user-attachments/assets/c853d359-9d73-4c46-810c-d6dc414cf35c" />
+
 
 ---
 
