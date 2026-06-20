@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occasion-Based Product Recommendations</title>
+    
+    <!-- Google Fonts: Inter for UI, Playfair Display for headers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-wand-magic-sparkles brand-icon"></i>
+            <span>VibeMatch <span class="badge">AI</span></span>
+        </div>
+        <div class="nav-controls">
+            <button id="devPanelBtn" class="btn btn-secondary btn-icon-text" title="Developer Analytics">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Metrics</span>
+            </button>
+            <button id="themeToggle" class="btn btn-icon" title="Toggle Light/Dark Theme">
+                <i class="fa-solid fa-sun icon-sun"></i>
+                <i class="fa-solid fa-moon icon-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Match Products to Your <span>Special Occasion</span></h1>
+            <p class="hero-subtitle">Our intelligent hybrid TF-IDF & semantic mapping engine finds the perfect gifts, decor, and accessories for any event.</p>
+            
+            <!-- Search Box Wrapper -->
+            <div class="search-wrapper">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="occasionInput" placeholder="Describe the occasion (e.g., 'A romantic Valentine's candlelight dinner')" autocomplete="off">
+                    <button id="clearSearch" class="btn-clear hidden"><i class="fa-solid fa-xmark"></i></button>
+                    <button id="searchBtn" class="btn btn-primary">Find Products</button>
+                </div>
+                <!-- Autocomplete Dropdown -->
+                <div id="suggestionsList" class="suggestions-dropdown hidden"></div>
+            </div>
+
+            <!-- Quick-Search Occasions -->
+            <div class="quick-searches">
+                <span class="quick-label">Try searching:</span>
+                <div class="quick-pills">
+                    <button class="pill-btn" data-query="Wedding"><i class="fa-solid fa-ring"></i> Wedding</button>
+                    <button class="pill-btn" data-query="Birthday"><i class="fa-solid fa-cake-candles"></i> Birthday</button>
+                    <button class="pill-btn" data-query="Diwali"><i class="fa-solid fa-fire"></i> Diwali</button>
+                    <button class="pill-btn" data-query="Valentine"><i class="fa-solid fa-heart"></i> Valentine's</button>
+                    <button class="pill-btn" data-query="Office Party"><i class="fa-solid fa-briefcase"></i> Office Party</button>
+                    <button class="pill-btn" data-query="Housewarming"><i class="fa-solid fa-house-chimney"></i> Housewarming</button>
+                    <button class="pill-btn" data-query="Baby Shower"><i class="fa-solid fa-baby"></i> Baby Shower</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <div class="results-header">
+                <h2 id="resultsTitle" class="section-title">Recommended for You</h2>
+                <div class="results-meta">
+                    <span id="resultCount" class="result-count">Found 0 products</span>
+                    <span id="timingBadge" class="timing-badge">in 0.0ms</span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsGrid" class="products-grid"></div>
+        </section>
+
+        <!-- Initial/Welcome State -->
+        <section id="initialState" class="state-panel">
+            <div class="state-graphic animate-pulse">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <h3>Discover Recommendations</h3>
+            <p>Enter an occasion above or click a quick-search pill to explore matching products.</p>
+        </section>
+
+        <!-- Loading State -->
+        <section id="loadingState" class="state-panel hidden">
+            <div class="spinner"></div>
+            <h3>Analyzing Product Catalog...</h3>
+            <p>Evaluating semantic relevance and calculating TF-IDF similarities.</p>
+        </section>
+
+        <!-- Empty State -->
+        <section id="emptyState" class="state-panel hidden">
+            <div class="state-graphic text-muted">
+                <i class="fa-solid fa-face-frown-open"></i>
+            </div>
+            <h3>No Matches Found</h3>
+            <p id="emptyMessage">We couldn't find any products in our catalog matching that description. Try adjusting your query or keywords.</p>
+        </section>
+    </main>
+
+    <!-- Developer Analytics Sidebar -->
+    <aside id="devPanel" class="dev-sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fa-solid fa-terminal"></i> NLP Engine Metrics</h3>
+            <button id="closeDevPanel" class="btn-close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-content">
+            <!-- Summary Stats -->
+            <div class="metrics-card">
+                <h4>Dataset Metrics</h4>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-num" id="statProducts">-</span>
+                        <span class="stat-label">Products</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" id="statCategories">-</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" id="statVocab">-</span>
+                        <span class="stat-label">Vocabulary Size</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Execution Time Log -->
+            <div class="metrics-card">
+                <h4>Pipeline Performance</h4>
+                <div class="metric-row">
+                    <span>NLP Tokenizer:</span>
+                    <strong class="text-green">Clean & Split</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Vector similarity:</span>
+                    <strong class="text-green">Pure Cosine</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Engine response time:</span>
+                    <strong id="metricResponseTime" class="text-yellow">N/A</strong>
+                </div>
+            </div>
+
+            <!-- Query Expansion Details -->
+            <div class="metrics-card">
+                <h4>Query Expansion (Semantic mapping)</h4>
+                <p class="metrics-desc">The search expands occasion keywords into related synonyms for higher match recall.</p>
+                <div class="expansion-box">
+                    <div class="expansion-header">Expanded Terms:</div>
+                    <div id="expandedTerms" class="tag-container">
+                        <span class="empty-tag">No search performed yet</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithm Description -->
+            <div class="metrics-card">
+                <h4>Pipeline Architecture</h4>
+                <div class="algo-steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-text"><strong>Tokenize & Clean</strong>: Raw strings are stripped of stop-words and punctuation, then lowercased.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-text"><strong>Expand Query</strong>: Maps occasions to semantic tag dictionaries (e.g. "wedding" includes "bride, ceremony").</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-text"><strong>TF-IDF Vectorization</strong>: TF counts normalized by length; IDF smoothed using `log(1 + N/(1+DF))`.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-text"><strong>Cosine Similarity</strong>: Inner product divided by Euclidean norms. Direct title matches receive a +15% boost.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <footer class="footer">
+        <p>&copy; 2026 Occasion Recommendation System (VibeMatch AI). Prepared for the AI/ML Engineer Role.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="/static/app.js"></script>
+</body>
+</html>
