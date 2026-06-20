@@ -1,30 +1,18 @@
 Occasion-Based Product Recommendation System
-Overview
-
-This project is an AI-powered Occasion-Based Product Recommendation System that recommends relevant products based on user-entered occasions such as Birthday, Wedding, Anniversary, Diwali, Valentine's Day, Office Party, Housewarming, and more.
-
-The system analyzes product information from the provided product catalog and ranks products according to their relevance to the selected occasion.
-
----
-
-## 📋 Table of Contents
-- [1. Overview](#1-overview)
-- [2. Product Data Structure](#2-product-data-structure)
-- [3. Task Requirements & Core Functionality](#3-task-requirements--core-functionality)
-- [4. Recommendation Engine Architecture & Logic](#4-recommendation-engine-architecture--logic)
-- [5. Technical Design Decisions & Rationale](#5-technical-design-decisions--rationale)
-- [6. Project Directory Structure](#6-project-directory-structure)
-- [7. Tech Stack](#7-tech-stack)
-- [8. Getting Started & Local Setup](#8-getting-started--local-setup)
-- [9. API Documentation](#9-api-documentation)
-- [10. Running the Test Suite](#10-running-the-test-suite)
-- [11. Submission Deliverables & Screenshots](#11-submission-deliverables--screenshots)
-- [12. Citations & AI Tools Usage](#12-citations--ai-tools-usage)
-
----
 
 ## 1. Overview
 The goal of this system is to ingest a product catalog and intelligently recommend relevant products matching a user-specified occasion (e.g., *Wedding, Birthday, Diwali, Valentine's Day, Office Party*). It demonstrates how to combine semantic understanding with traditional search techniques to achieve fast, high-recall recommendations that work seamlessly in real-world environments.
+## Features
+Features
+Occasion-based product recommendations
+Hybrid recommendation engine
+Semantic search using Sentence Transformers
+TF-IDF based keyword matching
+Ranked recommendation results
+Product image display
+Responsive user interface
+Empty-state handling for unmatched occasions
+FastAPI REST API backend
 
 ---
 
@@ -248,6 +236,6 @@ The NLP Engine Dashboard displays dataset statistics, pipeline performance, sema
   - `fastapi` & `uvicorn` (ASGI web framework and server)
   - `sentence-transformers` (pre-trained NLP model integration)
   - `numpy` (vectorized cosine calculations)
-- **AI Coding Assistant**: Developed with the assistance of **Antigravity (built by Google DeepMind)**.
+- **AI Coding Assistant**: Developed with the assistance of **COPILOT AND GEMINI AI**.
 
 ---
