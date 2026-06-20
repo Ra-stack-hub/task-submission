@@ -4,8 +4,8 @@ Occasion-Based Product Recommendation System
 The goal of this system is to ingest a product catalog and intelligently recommend relevant products matching a user-specified occasion (e.g., *Wedding, Birthday, Diwali, Valentine's Day, Office Party*). It demonstrates how to combine semantic understanding with traditional search techniques to achieve fast, high-recall recommendations that work seamlessly in real-world environments.
 ## Features
 Features
-Occasion-based product recommendations
-Hybrid recommendation engine
+->Occasion-based product recommendations
+->Hybrid recommendation engine
 Semantic search using Sentence Transformers
 TF-IDF based keyword matching
 Ranked recommendation results
